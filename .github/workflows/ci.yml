@@ -1,0 +1,111 @@
+name: CI - Prueba Técnica QA
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  api-tests:
+    name: Ejercicio 2 - Pruebas de API
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Instalar navegadores de Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Correr pruebas de API
+        run: npx playwright test --project=api
+        env:
+          GOAL_TRACKER_API_URL: ${{ secrets.GOAL_TRACKER_API_URL }}
+          TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
+
+      - name: Subir reporte de API
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-api
+          path: playwright-report/
+          retention-days: 7
+
+  chatbot-tests:
+    name: Ejercicio 3 - Pruebas de Chatbot Web
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Instalar navegadores de Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Correr pruebas de chatbot
+        run: npx playwright test --project=chatbot
+        env:
+          CHATBOT_SITE_URL: ${{ secrets.CHATBOT_SITE_URL }}
+
+      - name: Subir evidencia (screenshots/video)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidencia-chatbot
+          path: |
+            test-results/
+            playwright-report/
+          retention-days: 7
+
+  llm-eval-tests:
+    name: Ejercicio 1 - Evaluación de Agentes LLM
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias
+        working-directory: ./ejercicio1-llm-eval
+        run: npm ci
+
+      - name: Correr evaluación de escenarios LLM
+        working-directory: ./ejercicio1-llm-eval
+        run: npm start
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+
+      - name: Subir resultados JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultados-llm-eval
+          path: output/ejercicio1/
+          retention-days: 7
+
+  reporte-final:
+    name: Reporte Consolidado
+    needs: [api-tests, chatbot-tests, llm-eval-tests]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Resumen de ejecución
+        run: |
+          echo "## Resultado del Pipeline" >> $GITHUB_STEP_SUMMARY
+          echo "- Ejercicio 1 (LLM Eval): ${{ needs.llm-eval-tests.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Ejercicio 2 (API): ${{ needs.api-tests.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Ejercicio 3 (Chatbot): ${{ needs.chatbot-tests.result }}" >> $GITHUB_STEP_SUMMARY

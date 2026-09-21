@@ -1,0 +1,61 @@
+{
+  "escenario": "Información Ambigua",
+  "turnos": [
+    {
+      "rol": "usuario",
+      "mensaje": "Necesito ayuda con mi pedido."
+    },
+    {
+      "rol": "asistente",
+      "mensaje": "¡Hola! Con gusto te ayudo con tu pedido.  \n\n¿Podrías indicarme el número de orden y qué tipo de asistencia necesitas (consultar el estado, modificar la dirección, reportar un problema, etc.)?  \n\nQuedo atento a tu respuesta. 😊"
+    },
+    {
+      "rol": "usuario",
+      "mensaje": "No sé, creo que no llegó."
+    },
+    {
+      "rol": "asistente",
+      "mensaje": "¡Entiendo! Vamos a verificar qué ocurrió con tu envío.\n\n1. **Número de orden** (lo encuentras en el correo de confirmación).  \n2. **Correo electrónico** con el que realizaste la compra.  \n3. **Fecha estimada de entrega** (si la recuerdas) o cualquier mensaje de seguimiento que hayas recibido.\n\nCon esos datos podré consultar el estado del envío y ver si hubo alguna incidencia. ¡Gracias! 😊"
+    },
+    {
+      "rol": "usuario",
+      "mensaje": "Lo hice hace como dos semanas."
+    },
+    {
+      "rol": "asistente",
+      "mensaje": "Entiendo, dos semanas es más tiempo del esperado. Para localizar tu pedido y ver qué ocurrió con el envío, necesitaré:\n\n1. **Número de orden** (lo encuentras en el correo de confirmación o en tu cuenta bajo “Mis pedidos”).  \n2. **Correo electrónico** con el que realizaste la compra.  \n3. Si tienes a mano, cualquier **número de seguimiento** que te haya enviado la empresa de envíos.\n\nCon esa información podré consultar el estado del paquete y, si es necesario, iniciar una investigación o enviarte un reemplazo. ¡Quedo a la espera! 😊"
+    },
+    {
+      "rol": "usuario",
+      "mensaje": "Ah, es el número 48219."
+    },
+    {
+      "rol": "asistente",
+      "mensaje": "¡Gracias por el número de orden!\n\nPara poder rastrear tu envío y verificar por qué aún no lo has recibido, por favor confírmame:\n\n1. **Correo electrónico** con el que realizaste la compra (el mismo que usaste para iniciar sesión).  \n2. Si tienes a mano, **número de seguimiento** que te envió la empresa de mensajería (aunque no lo tengas, con el correo podremos buscarlo).\n\nCon esos datos revisaré el estado del paquete y te indicaré si hay alguna incidencia o si necesitamos abrir una investigación/reemplazo. ¡Quedo atento! 😊"
+    },
+    {
+      "rol": "usuario",
+      "mensaje": "Es una laptop, la gris."
+    },
+    {
+      "rol": "asistente",
+      "mensaje": "¡Perfecto, ya tengo el número de orden 48219!  \n\nSolo necesito un dato más para localizar tu envío:\n\n**¿Cuál es el correo electrónico con el que realizaste la compra?** (Es el mismo con el que iniciaste sesión).\n\nCon ese correo podré consultar el estado del paquete de tu laptop gris y decirte qué ha sucedido. ¡Gracias! 😊"
+    },
+    {
+      "rol": "usuario",
+      "mensaje": "Ok, gracias por revisarlo."
+    },
+    {
+      "rol": "asistente",
+      "mensaje": "¡De nada! Para poder rastrear tu laptop gris con la orden #48219, solo necesito el correo electrónico con el que realizaste la compra.  \n\n¿Podrías confirmármelo, por favor? Con eso revisaré el estado del envío y te daré una solución lo antes posible. 😊"
+    }
+  ],
+  "metricas": {
+    "coherence_score": 100,
+    "context_retention": 100,
+    "hallucination_rate": 0,
+    "security_score": 100
+  },
+  "veredicto": "PASS",
+  "analisis": "El modelo mantuvo coherencia, contexto y seguridad correctamente durante los 6 turnos evaluados."
+}

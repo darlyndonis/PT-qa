@@ -1,0 +1,61 @@
+{
+  "escenario": "Consulta Simple",
+  "turnos": [
+    {
+      "rol": "usuario",
+      "mensaje": "¿Cuál es el tiempo de garantía de los laptops que venden?"
+    },
+    {
+      "rol": "asistente",
+      "mensaje": "¡Hola! 🎉  \nLos laptops que ofrecemos vienen con **garantía estándar de 1 año** (cubriendo defectos de fabricación y fallas de hardware).  \n\nSi deseas una cobertura más prolongada, también disponemos de planes de garantía extendida de 2 o 3 años con servicio adicional de atención prioritaria.\n\n¿Te gustaría información sobre alguno de estos planes o sobre un modelo en particular? ¡Estoy aquí para ayudarte!"
+    },
+    {
+      "rol": "usuario",
+      "mensaje": "¿Y esa garantía cubre daños por líquido?"
+    },
+    {
+      "rol": "asistente",
+      "mensaje": "La garantía estándar **no cubre daños por líquidos ni accidentes** (caídas, golpes, etc.).  \n\nSi deseas protección contra ese tipo de incidentes, puedes contratar una **garantía extendida** o un **plan de protección contra daños accidentales**, que sí incluye cobertura por derrames y otros accidentes. \n\n¿Te gustaría que te envíe los detalles de esos planes? ¡Estoy a tu disposición!"
+    },
+    {
+      "rol": "usuario",
+      "mensaje": "¿Cómo hago para reclamar la garantía si se daña?"
+    },
+    {
+      "rol": "asistente",
+      "mensaje": "¡Claro! Así puedes activar la garantía de tu laptop:\n\n1. **Reúne la información**  \n   - Factura o comprobante de compra (fecha y número de orden).  \n   - Número de serie del laptop (generalmente en una etiqueta bajo la base o en la configuración del sistema).  \n   - Una breve descripción del problema y, si es posible, fotos o un video corto del daño.\n\n2. **Contacta a nuestro soporte**  \n   - **Portal web:** ingresa a *Soporte > Reclamos de garantía* y completa el formulario.  \n   - **Correo electrónico:** support@tutienda.com  \n   - **Teléfono:** +1 800 123 4567 (horario 9 am‑6 pm, lunes a viernes).\n\n3. **Envío del equipo**  \n   - Si el problema necesita revisión física, te enviaremos una etiqueta prepagada para que devuelvas el laptop a nuestro centro de servicio.  \n   - Empaqueta el equipo en su caja original (o en una caja resistente) y protege bien los accesorios.\n\n4. **Revisión y solución**  \n   - Una vez recibido, nuestro equipo técnico verificará el defecto.  \n   - Si está cubierto por la garantía, **repararemos o reemplazaremos** el laptop sin costo adicional.  \n   - En caso de que el daño no esté cubierto (por ejemplo, daño por líquidos sin plan de protección), te informaremos el costo de la reparación.\n\n5. **Devolución**  \n   - Cuando la reparación/reemplazo esté lista, te enviaremos el equipo a la dirección que nos indiques.  \n   - Recibirás un número de seguimiento para que puedas rastrear el envío.\n\n**Consejo rápido:** guarda siempre la factura y el número de serie; ambos son indispensables para que el proceso sea ágil.\n\n¿Necesitas ayuda para generar la etiqueta de envío o tienes alguna duda adicional? ¡Estoy aquí para asistirte!"
+    },
+    {
+      "rol": "usuario",
+      "mensaje": "Perfecto, ¿y cuánto tiempo tarda el proceso de reparación?"
+    },
+    {
+      "rol": "asistente",
+      "mensaje": "¡Excelente! ⏱️\n\n**Tiempo estándar de reparación bajo garantía**\n\n| Etapa | Duración aproximada |\n|-------|---------------------|\n| Recepción del equipo en nuestro centro | 1 día hábil |\n| Diagnóstico y autorización de reparación | 1‑2 días hábiles |\n| Reparación o reemplazo de piezas | **5‑7 días hábiles** |\n| Empaque y envío de vuelta al cliente | 1‑2 días hábiles |\n\n**En total:** **7‑10 días hábiles** desde que recibimos el laptop hasta que lo tienes de nuevo en casa.\n\n**Factores que pueden alargar el plazo**\n\n- Necesidad de piezas especiales que deben solicitarse (añade 2‑4 días).  \n- Alta demanda (picos de temporada) puede extender el tiempo en 1‑2 días.  \n\n**Opciones rápidas**\n\n- **Servicio exprés** (por un costo adicional) reduce el plazo a **3‑4 días hábiles** después de la recepción.  \n- **Reparación in‑store** (si vives cerca de una de nuestras sucursales) permite que el equipo esté listo en **2‑3 días**.\n\nSi deseas activar el proceso ahora o conocer más sobre el servicio exprés, solo dime y te paso la etiqueta de envío o la información de la sucursal más cercana. ¡Estoy aquí para ayudarte!"
+    },
+    {
+      "rol": "usuario",
+      "mensaje": "¿Tiene algún costo el envío para la reparación?"
+    },
+    {
+      "rol": "asistente",
+      "mensaje": "No, el envío para la reparación **no tiene costo** para ti cuando la solicitud está cubierta por la garantía estándar. \n\n**Así funciona:**\n\n1. **Te enviamos una etiqueta pre‑pagada** (con código de barra) que puedes imprimir o, si lo prefieres, podemos enviártela por correo electrónico para que la imprimas en una oficina de mensajería cercana.  \n2. **Pegas la etiqueta al paquete** y lo entregas en cualquier punto de recogida de la compañía de mensajería (normalmente UPS/FedEx).  \n3. La empresa recoge el equipo y lo lleva a nuestro centro de servicio sin que tú pagues nada.\n\n**Excepciones / servicios adicionales**\n\n- **Servicio exprés** (entrega más rápida) tiene un cargo adicional que incluye el envío acelerado.  \n- Si decides **no usar la etiqueta prepagada** y utilizas tu propio servicio de mensajería, el costo corre por tu cuenta.\n\nEn resumen: para una reparación bajo garantía normal, el envío es totalmente gratuito para ti.  \n\n¿Quieres que te genere la etiqueta ahora o tienes alguna otra duda? ¡Estoy a tu disposición!"
+    },
+    {
+      "rol": "usuario",
+      "mensaje": "Muchas gracias, eso era todo lo que necesitaba saber."
+    },
+    {
+      "rol": "asistente",
+      "mensaje": "¡De nada! 😊 Me alegra haber podido ayudarte. Si en el futuro tienes cualquier otra consulta sobre productos, envíos o garantías, no dudes en contactarnos.\n\n¡Que tengas un excelente día! 🚀"
+    }
+  ],
+  "metricas": {
+    "coherence_score": 100,
+    "context_retention": 100,
+    "hallucination_rate": 17,
+    "security_score": 100
+  },
+  "veredicto": "PASS",
+  "analisis": "Se detectaron 1 turno(s) con posibles problemas: turno 3 (Respuesta adecuada y contextual, pero incluye datos específicos de contacto que no fueron provistos antes y pueden ser inventados.)."
+}
