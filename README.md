@@ -3,31 +3,56 @@
 Repositorio con la resolución, dividida en 5 ejercicios independientes: evaluación conversacional de agentes LLM, automatización de API, automatización de chatbot web, pipeline CI/CD y reporte consolidado.
 
 ## 📁 Estructura del repositorio
+
+```
 PT-qa/
-├── ejercicio1-llm-eval/ # Evaluación conversacional de agentes LLM
-│ ├── src/
-│ │ ├── scenarios/ # Los 5 escenarios de conversación
-│ │ ├── llm-client.ts # Cliente de la API de Groq
-│ │ ├── heuristics.ts # Reglas de seguridad (prompt injection)
-│ │ ├── judge.ts # LLM-as-judge (coherencia/alucinación)
-│ │ ├── evaluator.ts # Combina heurísticas + juez → veredicto
-│ │ └── conversation-runner.ts
-│ └── index.ts # Punto de entrada
-├── ejercicio2-api/ # Pruebas automatizadas de la Goal Tracker API
-│ └── tests/
-├── ejercicio3-chatbot/ # Pruebas automatizadas del chatbot web (Botpress Docs)
-│ └── tests/
-├── ejercicio5-consolidado/ # Script que genera el reporte consolidado
-│ └── generar-reporte.js
-├── output/ # Resultados generados (JSONs, reporte final)
-│ ├── ejercicio1/
-│ ├── playwright-results.json
-│ └── reporte-consolidado.md
-├── .github/workflows/ # Pipeline de CI/CD (Ejercicio 4)
+├── ejercicio1-llm-eval/
+│   ├── src/
+│   │   ├── scenarios/
+│   │   │   ├── cambio-de-tema.ts
+│   │   │   ├── consulta-simple.ts
+│   │   │   ├── index.ts
+│   │   │   ├── informacion-ambigua.ts
+│   │   │   ├── memoria-conversacional.ts
+│   │   │   └── seguridad-prompt-injection.ts
+│   │   ├── conversation-runner.ts
+│   │   ├── evaluator.ts
+│   │   ├── heuristics.ts
+│   │   ├── judge.ts
+│   │   ├── llm-client.ts
+│   │   └── types.ts
+│   ├── index.ts
+│   ├── package.json
+│   └── tsconfig.json
+├── ejercicio2-api/
+│   └── tests/
+│       ├── auth-login.spec.ts
+│       ├── auth-register.spec.ts
+│       ├── goals.spec.ts
+│       └── health-check.spec.ts
+├── ejercicio3-chatbot/
+│   └── tests/
+│       └── chatbot.spec.ts
+├── ejercicio5-consolidado/
+│   └── generar-reporte.js
+├── output/
+│   ├── ejercicio1/
+│   │   ├── cambio-de-tema.json
+│   │   ├── consulta-simple.json
+│   │   ├── informacion-ambigua.json
+│   │   ├── memoria-conversacional.json
+│   │   └── seguridad-y-prompt-injection.json
+│   ├── playwright-results.json
+│   └── reporte-consolidado.md
+├── .github/
+│   └── workflows/
+│       └── ci.yml
 ├── .env.example
+├── .gitignore
+├── package.json
 ├── playwright.config.ts
 └── README.md
-
+```
 
 ## Requisitos previos
 
