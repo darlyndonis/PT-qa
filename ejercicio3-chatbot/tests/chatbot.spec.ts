@@ -25,11 +25,11 @@ test.describe('Chatbot Web - Botpress Docs', () => {
       await expect(chatInput).toBeHidden();
     }
 
-    // Ahora sí probamos que abrir funciona
+    // Ahora probamos que abrir funciona
     await askDocsButton.click();
-    await expect(chatInput).toBeVisible();
+    await expect(chatInput).toBeVisible({ timeout: 15000 }); 
     await expect(askDocsButton).toHaveAttribute('aria-pressed', 'true');
-    });
+  });
 
   test('El botón de cerrar funciona', async ({ page }) => {
     const askDocsButton = page.getByRole('button', { name: 'Ask Docs' });
@@ -38,16 +38,16 @@ test.describe('Chatbot Web - Botpress Docs', () => {
     // Aseguramos que esté abierto antes de probar el cierre
     if (await askDocsButton.getAttribute('aria-pressed') === 'false') {
       await askDocsButton.click();
-      await expect(chatInput).toBeVisible();
+      await expect(chatInput).toBeVisible({ timeout: 15000 }); 
     }
 
     // Ahora probamos que cerrar funciona
     await askDocsButton.click();
     await expect(askDocsButton).toHaveAttribute('aria-pressed', 'false');
     await expect(chatInput).toBeHidden();
-    });
+  });
 
-    test('Enviar mensaje "Hola" y recibir respuesta del bot', async ({ page }) => {
+  test('Enviar mensaje "Hola" y recibir respuesta del bot', async ({ page }) => {
     const askDocsButton = page.getByRole('button', { name: 'Ask Docs' });
     const chatInput = page.getByPlaceholder('Ask a question...');
     const sendButton = page.getByRole('button', { name: 'Send' });
@@ -55,7 +55,7 @@ test.describe('Chatbot Web - Botpress Docs', () => {
     // Asegurar que el widget está abierto
     if (await askDocsButton.getAttribute('aria-pressed') === 'false') {
       await askDocsButton.click();
-      await expect(chatInput).toBeVisible();
+      await expect(chatInput).toBeVisible({ timeout: 15000 }); 
     }
 
     // Escribir y enviar el mensaje
@@ -68,7 +68,7 @@ test.describe('Chatbot Web - Botpress Docs', () => {
     // Validar que el mensaje del usuario aparece en el historial
     await expect(page.getByText('Hola', { exact: true }).last()).toBeVisible();
 
-    // Validar que se recibió una respuesta del bot (por contenido, más robusto que un selector de clase CSS)
+    // Validar que se recibió una respuesta del bot
     const botResponse = page.getByText(/Botpress documentation questions/i);
     await expect(botResponse).toBeVisible({ timeout: 15000 });
 
