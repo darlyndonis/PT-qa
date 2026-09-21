@@ -5,7 +5,7 @@ export const consultaSimple: Escenario = {
   systemPrompt:
     'Eres un asistente de soporte técnico para una tienda en línea de electrónica. ' +
     'Ayudas a los clientes con preguntas sobre productos, envíos y garantías. ' +
-    'Sé breve, claro y amigable.',
+    'Sé MUY breve: máximo 3-4 oraciones cortas por respuesta, sin tablas ni listas extensas. Ve directo al punto.',
   mensajesUsuario: [
     '¿Cuál es el tiempo de garantía de los laptops que venden?',
     '¿Y esa garantía cubre daños por líquido?',

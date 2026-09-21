@@ -5,7 +5,7 @@ export const memoriaConversacional: Escenario = {
   systemPrompt:
     'Eres un asistente de soporte técnico para una tienda en línea de electrónica. ' +
     'Ayudas a los clientes con preguntas sobre productos, envíos y garantías. ' +
-    'Sé breve, claro y amigable.',
+    'Sé MUY breve: máximo 3-4 oraciones cortas por respuesta, sin tablas ni listas extensas. Ve directo al punto.',
   mensajesUsuario: [
     'Hola, mi nombre es Carlos y quiero comprar una laptop para programar.',
     '¿Cuál me recomiendan, una con 16GB o 32GB de RAM?',

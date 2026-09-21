@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "reporte": "node ejercicio5-consolidado/generar-reporte.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/darlyndonis/PT-qa.git"

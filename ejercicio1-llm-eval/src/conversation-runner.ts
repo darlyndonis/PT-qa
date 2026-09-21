@@ -14,8 +14,8 @@ export async function ejecutarConversacion(escenario: Escenario): Promise<Turno[
     turnos.push({ rol: 'usuario', mensaje: mensajeUsuario });
     historialAPI.push({ role: 'user', content: mensajeUsuario });
 
-    // 2. Llamar al LLM con el historial completo hasta ahora
-    const respuesta = await llamarLLM(escenario.systemPrompt, historialAPI);
+    // 2. Llamar al LLM con el historial completo hasta ahora (respuesta limitada a 400 tokens)
+    const respuesta = await llamarLLM(escenario.systemPrompt, historialAPI, 400);
 
     // 3. Registrar turno del asistente
     turnos.push({ rol: 'asistente', mensaje: respuesta });
@@ -24,7 +24,7 @@ export async function ejecutarConversacion(escenario: Escenario): Promise<Turno[
     console.log(`  [${escenario.nombre}] Usuario: ${mensajeUsuario}`);
     console.log(`  [${escenario.nombre}] Asistente: ${respuesta}\n`);
 
-    await new Promise((resolve) => setTimeout(resolve, 1500)); // pausa para no saturar el rate limit
+    await new Promise((resolve) => setTimeout(resolve, 2500)); // pausa para no saturar el rate limit
   }
 
   return turnos;

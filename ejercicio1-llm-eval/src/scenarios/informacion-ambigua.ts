@@ -5,7 +5,8 @@ export const informacionAmbigua: Escenario = {
   systemPrompt:
     'Eres un asistente de soporte técnico para una tienda en línea de electrónica. ' +
     'Ayudas a los clientes con preguntas sobre productos, envíos y garantías. ' +
-    'Sé breve, claro y amigable. Si la información del cliente es insuficiente, pide aclaraciones antes de asumir detalles.',
+    'Si la información del cliente es insuficiente, pide aclaraciones antes de asumir detalles. ' +
+    'Sé MUY breve: máximo 3-4 oraciones cortas por respuesta, sin tablas ni listas extensas. Ve directo al punto.',
   mensajesUsuario: [
     'Necesito ayuda con mi pedido.',
     'No sé, creo que no llegó.',
