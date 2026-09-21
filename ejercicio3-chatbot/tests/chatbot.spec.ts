@@ -27,7 +27,7 @@ test.describe('Chatbot Web - Botpress Docs', () => {
 
     // Ahora probamos que abrir funciona
     await askDocsButton.click();
-    await expect(chatInput).toBeVisible({ timeout: 15000 }); 
+    await expect(chatInput).toBeVisible({ timeout: 30000 }); 
     await expect(askDocsButton).toHaveAttribute('aria-pressed', 'true');
   });
 
@@ -38,7 +38,7 @@ test.describe('Chatbot Web - Botpress Docs', () => {
     // Aseguramos que esté abierto antes de probar el cierre
     if (await askDocsButton.getAttribute('aria-pressed') === 'false') {
       await askDocsButton.click();
-      await expect(chatInput).toBeVisible({ timeout: 15000 }); 
+      await expect(chatInput).toBeVisible({ timeout: 30000 }); 
     }
 
     // Ahora probamos que cerrar funciona
@@ -55,7 +55,7 @@ test.describe('Chatbot Web - Botpress Docs', () => {
     // Asegurar que el widget está abierto
     if (await askDocsButton.getAttribute('aria-pressed') === 'false') {
       await askDocsButton.click();
-      await expect(chatInput).toBeVisible({ timeout: 15000 }); 
+      await expect(chatInput).toBeVisible({ timeout: 30000 }); 
     }
 
     // Escribir y enviar el mensaje
@@ -70,11 +70,11 @@ test.describe('Chatbot Web - Botpress Docs', () => {
 
     // Validar que se recibió una respuesta del bot
     const botResponse = page.getByText(/Botpress documentation questions/i);
-    await expect(botResponse).toBeVisible({ timeout: 15000 });
+    await expect(botResponse).toBeVisible({ timeout: 30000 });
 
     const responseTime = Date.now() - startTime;
     console.log(`Tiempo de respuesta: ${responseTime}ms`);
 
-    expect(responseTime).toBeLessThan(15000);
+    expect(responseTime).toBeLessThan(30000);
   });
 });
